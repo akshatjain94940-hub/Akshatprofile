@@ -1,0 +1,224 @@
+/* Base Styles & Colors */
+:root {
+    --primary-color: #0f172a;
+    --secondary-color: #1e293b;
+    --accent-color: #26254c;
+    --text-main: #334155;
+    --text-light: #485784;
+    --bg-color: #6479aa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Hero Section with Tech Background */
+.hero {
+    /* Uses a high-quality free stock image of code/tech as the default background */
+    background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 60vh;
+    min-height: 400px;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(15, 23, 42, 0.75); /* Dark blue tint over the image */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: var(--text-light);
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.hero-content .tagline {
+    color: #93c5fd;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Sections */
+section {
+    background:#ffffff;
+    margin: 40px 0;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.text-center h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Profile Area */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--bg-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.greeting {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+/* Qualifications Cards */
+.timeline .card {
+    background: var(--bg-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.2s;
+}
+
+.timeline .card:hover {
+    transform: translateX(5px);
+}
+
+.timeline h3 {
+    margin: 0 0 5px 0;
+    color: var(--secondary-color);
+}
+
+.institution {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* Skills Badges */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-badge {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.skill-badge:hover {
+    background: var(--accent-color);
+}
+
+/* Footer & Social Links */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: var(--text-light);
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+/* Contact Info Styling */
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.phone-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 8px;
+    letter-spacing: 1px;
+}
+
+.phone-link:hover {
+    color: var(--accent-color);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
